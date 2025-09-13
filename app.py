@@ -1,4 +1,3 @@
-# app.py
 import json
 import joblib
 import pandas as pd
@@ -6,9 +5,11 @@ import numpy as np
 import streamlit as st
 from pathlib import Path
 
+# Set page configuration
 st.set_page_config(page_title="Boston Housing Prediction", page_icon="🏠", layout="wide")
 st.title("🏠 Boston Housing Price Prediction")
 
+# Define file paths
 MODEL_PATH = Path("boston_best_model.pkl")
 META_PATH = Path("feature_columns.json")
 CARD_PATH = Path("model_card.md")
@@ -28,7 +29,7 @@ def load_meta():
     if not META_PATH.exists():
         st.error("feature_columns.json not found. Please train and save the model first.")
         st.stop()
-    with open(META_PATH, "r") as f:
+    with open(META_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
 
 model = load_model()
@@ -43,7 +44,6 @@ target = meta.get("target", "MEDV")
 st.sidebar.header("🔢 Enter Features")
 single_inputs = {}
 
-# sensible defaults if you know typical Boston ranges; here we default to 0.0 or empty string
 for col in all_feats:
     if col in num_feats:
         single_inputs[col] = st.sidebar.number_input(col, value=0.0, step=0.1, format="%.3f")
@@ -52,6 +52,7 @@ for col in all_feats:
 
 single_df = pd.DataFrame([single_inputs], columns=all_feats)
 
+# ---------- Single prediction ----------
 col_left, col_right = st.columns([1, 1])
 with col_left:
     st.subheader("🔮 Single Prediction")
@@ -77,7 +78,7 @@ with col_right:
             if missing_cols:
                 st.error(f"Missing columns: {missing_cols}")
             else:
-                df_in = df_in[all_feats]  # ensure column order
+                df_in = df_in[all_feats]
                 preds = model.predict(df_in)
                 out = df_in.copy()
                 out[target + "_PRED"] = preds
@@ -104,9 +105,9 @@ if not RESID_PLOT.exists() and not PVA_PLOT.exists():
     st.caption("Train with the provided script to generate diagnostic plots automatically.")
 
 # ---------- Model Card ----------
+st.subheader("📄 Model Card")
 if CARD_PATH.exists():
     with open(CARD_PATH, 'r', encoding='utf-8') as f:
         st.markdown(f.read())
 else:
     st.caption("model_card.md not found. Train with the script to generate a quick summary.")
-
