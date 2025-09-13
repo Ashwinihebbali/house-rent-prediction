@@ -106,7 +106,7 @@ if not RESID_PLOT.exists() and not PVA_PLOT.exists():
 # ---------- Model Card ----------
 st.subheader("📄 Model Card")
 if CARD_PATH.exists():
-    with open('filename.md', 'r', encoding='utf-8') as f:
+    with open('Model Card.md', 'r', encoding='utf-8') as f:
     st.markdown(f.read())
 
 
