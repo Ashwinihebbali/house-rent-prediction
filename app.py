@@ -104,11 +104,9 @@ if not RESID_PLOT.exists() and not PVA_PLOT.exists():
     st.caption("Train with the provided script to generate diagnostic plots automatically.")
 
 # ---------- Model Card ----------
-st.subheader("📄 Model Card")
 if CARD_PATH.exists():
-    with open('Model Card.md', 'r', encoding='utf-8') as f:
-    st.markdown(f.read())
-
-
+    with open(CARD_PATH, 'r', encoding='utf-8') as f:
+        st.markdown(f.read())
 else:
     st.caption("model_card.md not found. Train with the script to generate a quick summary.")
+
