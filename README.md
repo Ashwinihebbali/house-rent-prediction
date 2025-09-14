@@ -48,7 +48,7 @@ A local URL will be displayed in the terminal (e.g., `http://127.0.0.1:8501`).
 Open it in your browser to interact with the application by entering property details or uploading a CSV file to predict housing prices.
 
 ### ✅ Deployment
-The project has already been pushed to GitHub and deployed on [Streamlit Cloud](https://share.streamlit.io/). You can access the live app [here](https://share.streamlit.io/Ashwinihebbali/house-rent-prediction/main/app.py).
+The project has already been pushed to GitHub and deployed on [Streamlit Cloud](https://share.streamlit.io/). You can access the live app [here](https://ashwinihebbali-house-rent-prediction-app-train-test-yghgvh.streamlit.app/).
 
 ---
 
