@@ -11,7 +11,7 @@ Built with *Python* and *Streamlit*, it offers an **interactive and user-friendl
 - 📊 Accurate house price predictions using *regression models*  
 - 🖥 Interactive *Streamlit web application*  
 - 📝 Supports *single and batch inputs via CSV*  
-- 🧹 Handles numerical and categorical features efficiently  
+- 🧹 Handles numerical and categorical features efficiently
 
 ---
 
