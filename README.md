@@ -1,4 +1,4 @@
-# 🏠 Boston Housing Price Prediction 
+# 🏠 Boston Housing Price Prediction     
 
 ## 📌 Overview 
 This project leverages traditional machine learning algorithms to predict housing prices using datasets like the **Boston Housing Dataset**.  
