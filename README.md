@@ -1,5 +1,5 @@
 # 🏠 Boston Housing Price Prediction              
-
+ 
 ## 📌 Overview  
 This project leverages traditional machine learning algorithms to predict housing prices using datasets like the **Boston Housing Dataset**.  
 Users can estimate property prices based on features such as *crime rate, number of rooms, property tax rate, and pupil-teacher ratio*.  
