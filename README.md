@@ -5,7 +5,7 @@ This project leverages traditional machine learning algorithms to predict housin
 Users can estimate property prices based on features such as *crime rate, number of rooms, property tax rate, and pupil-teacher ratio*.  
 Built with *Python* and *Streamlit*, it offers an **interactive and user-friendly interface** for both single and batch predictions.  
 
---
+-- 
 
 ## ✨ Key Features
 - 📊 Accurate house price predictions using *regression models*   
